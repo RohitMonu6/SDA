@@ -1,0 +1,42 @@
+// Here we will see how to merge 2 arrays in 1 array
+import java.util.Scanner;
+public class Merge
+{
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the size of 1st array ");
+        int s1 = in.nextInt();
+        int arr1[] = new int[s1];       //Creation of 1st array of size 's1'
+        for(int i = 0;i<s1;i++)   //filling of Array
+        {
+            System.out.print((i+1)+". ");
+            arr1 = in.nextInt();
+        }
+        System.out.print("Enter the size of 2nd array ");
+        int s2 = in.nextInt();
+        int arr2[] = new int[s2];          //Creation of 2nd array of size 's2'
+        for(int i = 0;i<s2;i++)    //filling of Array
+        {
+            System.out.print((i+1)+". ");
+            arr2 = in.nextInt();
+        }
+        int c=0;   // work as a counter
+        int merge[] = new int[s1+s2];   // another array of size s1+s2 so as to combind both array
+        for(int i = 0;i<s1;i++)    //Filling of 1st array in merge
+        {
+          merge[i] = arr1[i];
+          c++;     //to get the last element index
+        }
+        // Filling of 2nd Array staring from last elements index of merge.
+        for(int i = 0;i<s2;i++)
+        {
+            merge[c] = arr2[i];
+            c++;    // to increase the index no.
+        }
+        //Array is merged
+        //Display
+        for(int i = 0;i<(s1+s2);i++)
+          System.out.print(arr[i]+"\t");
+    }
+}
