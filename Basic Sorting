@@ -17,9 +17,10 @@ public class Acending
             arr[i] = in.nextInt();
         }
         //Sorting Starts...
+        int temp;  // use while swapping
         for(int i = 0;i<s;i++)
         {
-            for(int j = i+1;j<s;j++)   //to compare from higher no. of element for the lower no.
+            for(int j = i+1;j<s;j++)   //to compare from higher no. of element for the lower no. i.e. from left to right
             {
                 if(arr[i]>arr[j])   //Swapping technique
                 {
@@ -35,3 +36,40 @@ public class Acending
           System.out.print(arr[i]+"\t");
     }
 }
+----------------------------------------------------------------
+                  | Bubble sort |
+                    -----------
+import java.util.Scanner;
+public class Acending
+{
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the size of Array : ");
+        int s = in.nextInt();
+        int arr[] = new int[s];      //SDA of size 's' is created
+        for(int i = 0;i<s;i++)   //filling of Elements from user
+        {
+            System.out.print((i+1)+". ");
+            arr[i] = in.nextInt();
+        }
+        //Sorting Starts...
+        int temp;  // use while swapping
+        for(int i = 0;i<s;i++)
+        {
+            for(int j = 1;j<(s-i);j++)   //to compare from higher no. of element for the lower no. from right to left
+            {
+                if(arr[j-1]>arr[j])   //Swapping technique
+                {
+                    temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        // Array is sorted
+        //Now display
+        for(int i = 0;i<s;i++)
+          System.out.print(arr[i]+"\t");
+    }
+}                    
