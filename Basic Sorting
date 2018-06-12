@@ -1,0 +1,37 @@
+// Two Sorting techniques : 1. Selection 2. Bubble
+--------------------------------------------------
+              | Selection sort |
+               ----------------
+import java.util.Scanner;
+public class Acending
+{
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the size of Array : ");
+        int s = in.nextInt();
+        int arr[] = new int[s];      //SDA of size 's' is created
+        for(int i = 0;i<s;i++)   //filling of Elements from user
+        {
+            System.out.print((i+1)+". ");
+            arr[i] = in.nextInt();
+        }
+        //Sorting Starts...
+        for(int i = 0;i<s;i++)
+        {
+            for(int j = i+1;j<s;j++)   //to compare from higher no. of element for the lower no.
+            {
+                if(arr[i]>arr[j])   //Swapping technique
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        // Array is sorted
+        //Now display
+        for(int i = 0;i<s;i++)
+          System.out.print(arr[i]+"\t");
+    }
+}
